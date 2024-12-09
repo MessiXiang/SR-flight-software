@@ -2,10 +2,10 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>cycle_nodes_pkg</name>
-  <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="ros@todo.todo">ros</maintainer>
-  <license>TODO: License declaration</license>
+  <version>0.0.1</version>
+  <description>Node cycle base demo</description>
+  <maintainer email="xiangyinghao@buaa.edu.cn">Yinghao Xiang</maintainer>
+  <license>MIT license</license>
 
   <depend>rclpy</depend>
 
