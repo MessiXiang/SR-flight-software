@@ -7,7 +7,7 @@ A flight software based on ROS2-foxy.
 
 > 2024.12 : Currently working on python, cpp (with lifecycle nodes) version will be done soon.
 
-![fig_20241210_72174](images/fig_20241210_36878_uploaded.jpg)  
+![fig_20241210_95463](images/fig_20241210_24161_uploaded.png)  
 
 ## Requirements
 
