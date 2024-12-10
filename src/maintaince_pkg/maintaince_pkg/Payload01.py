@@ -20,11 +20,14 @@ class Payload01(Node):
         self.restart_count_max = 3
         
         self.get_logger().info("node: %s started" % name)
+        
+        self.declare_parameter('use_new', 0)
 
         self.command_subscribe_ = self.create_subscription(Int32, "command", self.command_callback, 10)
         
         self.add_ints_server_ = self.create_service(Md5ver, "md5ver_srv12", self.hash_calc_md5)
         self.client_ = self.create_client(Md5ver, "md5ver_srv31")
+        self.client_old_ = self.create_client(Md5ver, "md5ver_srv31old")
 
     def command_callback(self, msg):
         if msg.data == 1:
@@ -40,21 +43,36 @@ class Payload01(Node):
             pass
 
     def send_request(self):
-        if rclpy.ok() and self.client_.wait_for_service(self.max_timeout) == False:
-            self.get_logger().info(f"no response from previous node")
-            self.no_response_count += 1
-            
-            if self.no_response_count >= self.restart_count_max:
-                # Just a example with subprocess. Multiprocess version is under constraction.
-                # Launch file is also acceptable
-                subprocess.Popen("ros2 run restart_node_pkg payload03", shell=True)
-                self.no_response_count = 0
-            return
+        if self.get_parameter("use_new").value:
+            if rclpy.ok() and self.client_.wait_for_service(self.max_timeout) == False:
+                self.get_logger().info(f"no response from previous node")
+                self.no_response_count += 1
+                
+                if self.no_response_count >= self.restart_count_max:
+                    # Just a example with subprocess. Multiprocess version is under constraction.
+                    # Launch file is also acceptable
+                    subprocess.Popen("ros2 run restart_node_pkg payload03", shell=True)
+                    self.no_response_count = 0
+                return
+        else:
+            if rclpy.ok() and self.client_old_.wait_for_service(self.max_timeout) == False:
+                self.get_logger().info(f"no response from previous node")
+                self.no_response_count += 1
+                
+                if self.no_response_count >= self.restart_count_max:
+                    # Just a example with subprocess. Multiprocess version is under constraction.
+                    # Launch file is also acceptable
+                    subprocess.Popen("ros2 run restart_node_pkg payload03old", shell=True)
+                    self.no_response_count = 0
+                return
         
         request = Md5ver.Request()
         self.verify_origin = str(time.time())
         request.origin = self.verify_origin
-        self.client_.call_async(request).add_done_callback(self.result_callback_)
+        if self.get_parameter("use_new").value:
+            self.client_.call_async(request).add_done_callback(self.result_callback_)
+        else:
+            self.client_old_.call_async(request).add_done_callback(self.result_callback_)
 
     def result_callback_(self, result_future):
         response = result_future.result()
