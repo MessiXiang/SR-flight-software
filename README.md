@@ -1,4 +1,4 @@
-# SR-flight-sorftware
+# SR-flight-software
 
 ![pic](https://img.shields.io/badge/version-v0.0.1-green)
 ![python](https://img.shields.io/badge/Python-3.8-green?logo=python&logoColor=ffffff)
