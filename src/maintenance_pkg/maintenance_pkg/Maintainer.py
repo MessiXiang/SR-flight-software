@@ -20,7 +20,7 @@ class Maintainer(Node):
         if msg.data == 999:
             time.sleep(1) # make sure payload03old is killed
             # also, just a demo. However, multprocess is avilable through python
-            subprocess.run("ros2 param set /payload01 use_new 1 && ros2 run maintaince_pkg payload03", shell=True)
+            subprocess.run("ros2 param set /payload01 use_new 1 && ros2 run maintenance_pkg payload03", shell=True)
 
 
 def main(args=None):
