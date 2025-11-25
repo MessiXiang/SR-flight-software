@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'maintaince_pkg'
+package_name = 'maintenance_pkg'
 
 setup(
     name=package_name,
@@ -15,17 +15,17 @@ setup(
     zip_safe=True,
     maintainer='Yinghao Xiang',
     maintainer_email='xiangyinghao@buaa.edu.cn',
-    description='Node maintaince demo',
+    description='Node maintenance demo',
     license='MIT license',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            "payload01 = maintaince_pkg.Payload01:main",
-            "payload02 = maintaince_pkg.Payload02:main",
-            "payload03 = maintaince_pkg.Payload03:main",
-            "payload03old = maintaince_pkg.Payload03old:main",
-            "switcher = maintaince_pkg.Switcher:main",
-            "maintainer = maintaince_pkg.Maintainer:main"
+            "payload01 = maintenance_pkg.Payload01:main",
+            "payload02 = maintenance_pkg.Payload02:main",
+            "payload03 = maintenance_pkg.Payload03:main",
+            "payload03old = maintenance_pkg.Payload03old:main",
+            "switcher = maintenance_pkg.Switcher:main",
+            "maintainer = maintenance_pkg.Maintainer:main"
         ],
     },
 )

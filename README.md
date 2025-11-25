@@ -56,18 +56,12 @@ sudo apt-get install python3-colcon-common-extensions
 
 ## Packages
 
-Our system demo includes 4 packages, all of them can be compiled by `colcon build`(at `SR-flisght-software/`):
+Our system demo includes 4 packages, all of them can be compiled by `colcon build`(at `SR-flight-software/`):
 
 - cycle_nodes_pkg
-- maintaince_pkg
+- maintenance_pkg
 - more_interfaces
 - restart_node_pkg
-
-### maintaince_pkg
-
-Includes some interfaces, needs compile.
-
-> TODO: note for add more interfaces
 
 ### cycle_nodes_pkg
 
@@ -114,9 +108,9 @@ Now it's ready for you to interrupt some of them:
 $ ros2 topic pub /destroy std_msgs/msg/Int32 'data: 1'
 ```
 
-### maintaince_pkg
+### maintenance_pkg
 
-Include demo for how to do maintaince for a certain node.
+Include demo for how to do maintenance for a certain node. Also includes some interfaces.
 
 You can use it by:
 
@@ -124,15 +118,15 @@ You can use it by:
 $ cd SR-flight-software
 $ colcon build
 $ source ./install/setup.bash
-$ ros2 run maintaince_pkg switcher
+$ ros2 run maintenance_pkg switcher
 ```
 
 (4 new terminals)
 ```bash
-$ ros2 run maintaince_pkg payload01
-$ ros2 run maintaince_pkg payload02
-$ ros2 run maintaince_pkg payload03old
-$ ros2 run maintaince_pkg maintainer
+$ ros2 run maintenance_pkg payload01
+$ ros2 run maintenance_pkg payload02
+$ ros2 run maintenance_pkg payload03old
+$ ros2 run maintenance_pkg maintainer
 ```
 
 Then you can start to switch `payload03old` to a new one:
