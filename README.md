@@ -1,11 +1,17 @@
 # SR-flight-software
 
-![pic](https://img.shields.io/badge/version-v0.0.1-green)
+![pic](https://img.shields.io/badge/version-v1.0.2-green)
 ![python](https://img.shields.io/badge/Python-3.8-green?logo=python&logoColor=ffffff)
+[![IEEE](https://img.shields.io/badge/IEEE-MAES-blue?logo=ieee&logoColor=ffffff)](https://ieeexplore.ieee.org/document/11363676)
+[![DOI](https://img.shields.io/badge/DOI-10.1109%2FMAES.2026.3657699-blue)](https://doi.org/10.1109/MAES.2026.3657699)
+![Status](https://img.shields.io/badge/Status-Early%20Access-orange)
 
 A flight software based on ROS2-foxy.
 
-Related to our work: [arxiv:2412.08164](https://arxiv.org/abs/2412.08164)
+📄 **Paper**: Published in *IEEE Aerospace and Electronic Systems Magazine* (Early Access)  
+🔗 **IEEE Xplore**: [https://ieeexplore.ieee.org/document/11363676](https://ieeexplore.ieee.org/document/11363676)  
+📎 **DOI**: [10.1109/MAES.2026.3657699](https://doi.org/10.1109/MAES.2026.3657699)  
+📝 **arXiv**: [2412.08164](https://arxiv.org/abs/2412.08164)
 
 > 2024.12 : Currently working on python, cpp (with lifecycle nodes) version will be done soon.
 
